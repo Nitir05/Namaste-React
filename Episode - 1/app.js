@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 //create a element which you want insied DIV in our case it is H1
 const parentDiv = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child" }, [
