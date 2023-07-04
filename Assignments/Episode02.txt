@@ -1,0 +1,26 @@
+01. What is NPM?
+Ans:- NPM is a package manager which stores all the useful packages or libraries which can be used to develop production ready apps.
+
+02. What is Parcel/Webpack ? Why do we need them?
+Ans:- Parcel/Webpack are the bundlers which bundles all our files in one bundle which can then be deployed on the server to be used.
+      We need bundlers because whenever we are developing production apps we need minified and optimized app, which these bundler take care of.
+
+03. What is .parcel-cache?
+Ans:- whenever parcel builds our project it stores the files in .parcel-cache folder, so that next time when it re runs,
+      it do not have to re-build or analyze all files again which makes builds much faster.
+
+04. what is npx ?
+Ans:- npx commad is used to run the package installed in project.
+
+05. What is difference between dependencies vs devdependencies?
+Ans:- dependencies includes the packages which are installed in our project which are available in our project all time,
+      but devDependencies are available only on time of development.
+
+06. What is Tree Shaking?
+ANs:- Tree shaking is the process in which Parcel analyzes all files and code in our project and removes the code which are not needed or are not used.
+
+07. What is Hot Module Replacement?
+Ans:- Hot module Replacement is the process in which changes made in the code are reflected in browser without refreshing the page.
+
+08. what is dist folder?
+Ans:- When you build you projet for production using Parcel it stores all its files in dist folder.
