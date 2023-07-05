@@ -33,6 +33,7 @@ Remove main from Package.JSON in our project we do not need that as it conflicts
 If we want to mention which browsers our react code works on we will have to mention Browserslist in the package.json file
 
 Class 3: Laying the foundation
+
 • JSX is not HTML inside JS.
 • JSX is XML-Like or HTML-Like syntax
 • Browsers do not understand JSX, JSX is transpiled to a format which is readable by browser.
@@ -50,3 +51,17 @@ Class 3: Laying the foundation
 • If we are getting data from external source and try to inject that data into our JSX, JSX will sanitize the data so we need not to worry.
 • JSX code can only have one parent , in order to solve this issue we can make use of React Fragment
 We can write <React.Fragment> </React.Fragment> or to simplify <> </> we can write this as well
+
+Class 4 : Talk is Cheap show me the code
+
+Props: passing prop to a component is similar to passing an argument to a function
+Config-driven UI :- UI changes based on different data
+Whenever we are looping over an array and want to pass data to any component we should always give unique key to it
+React says that do not use index as keys
+
+In React, everything is treated as a component be it a functional component or class component. A component can contain a state. Each time we change something in our JSX file or let’s put it in simple terms,
+whenever the state of any component is changed react updates its Virtual DOM tree. Though it may sound like it is ineffective the cost is not much significant as updating the virtual DOM doesn’t take much time. 
+React maintains two Virtual DOM at each time, one contains the updated Virtual DOM and one which is just the pre-update version of this updated Virtual DOM. Now it compares the pre-update version with the updated Virtual DOM and figures out what exactly has changed in the DOM like which components have been changed. 
+This process of comparing the current Virtual DOM tree with the previous one is known as ‘diffing’. Once React finds out what exactly has changed then it updates those objects only, on real DOM. 
+React uses something called batch updates to update the real DOM. It just means that the changes to the real DOM are sent in batches instead of sending any update for a single change in the state of a component. We have seen that the re-rendering of the UI is the most expensive part and React manages to do this most efficiently by ensuring that the Real DOM receives batch updates to re-render the UI. 
+This entire process of transforming changes to the real DOM is called Reconciliation.

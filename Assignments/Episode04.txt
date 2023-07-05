@@ -1,0 +1,25 @@
+01. Is JSX mandatory for React?
+Ans:- We can create React components without JSX as well using React.createElement but it becomes very complex and cumbersome to
+      create complex UI using React.createElement, hence JSX is used in React which makes it way easier for us.
+
+02. Is ES6 mandatory for React?
+Ans:- No its not mandatory react components can be created without ES6 as well, but modrn react components are functional components and
+      hence ES6 is widely used.
+
+03. What is Virtual DOM?
+Ans:- Virtual DOM is a copy of a actual DOM which react creates, React creates two Virtual DOMS for an component one which contains 
+      the changes and once which contains pre-updated component.
+
+04. What is reconciliation in React?
+Ans:- reconciliation is a process of transforming changes in real DOM.
+
+05. What is React Fiber?
+Ans: https://www.geeksforgeeks.org/what-is-react-fiber/
+
+06. Why do we nee keys in React?
+Ans:- Keys are way to identify elements in react uniquely, lets say we have 15 restaurant data which we are looping over 
+      and displaying via a component, next time if 1 more data gets added and if we do not have key , react will rerender all 15 
+      restaurant which can be performance hit.
+
+07. Can we pass indexes as Key?
+Ans: Yes we can pass but its not recommended.
