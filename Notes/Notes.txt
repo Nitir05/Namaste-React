@@ -65,3 +65,62 @@ React maintains two Virtual DOM at each time, one contains the updated Virtual D
 This process of comparing the current Virtual DOM tree with the previous one is known as ‘diffing’. Once React finds out what exactly has changed then it updates those objects only, on real DOM. 
 React uses something called batch updates to update the real DOM. It just means that the changes to the real DOM are sent in batches instead of sending any update for a single change in the state of a component. We have seen that the re-rendering of the UI is the most expensive part and React manages to do this most efficiently by ensuring that the Real DOM receives batch updates to re-render the UI. 
 This entire process of transforming changes to the real DOM is called Reconciliation.
+
+Food App
+/**
+ * Header
+ *  - Logo
+ *  - NavItems
+ * Body
+ *  - Search
+ *  - CardContainer
+ *  - RestaurentContainer
+ *    - Restaurent Card
+ * Footer
+ *  - Copyright
+ *  - Address
+ *  - Contact
+ */
+
+                                    Class 5 : Lets get Hooked
+
+Everything that we can do in react can be done via HTML,CSS and JS, but using react make the development faster, helps us to build complex production ready code.
+React Best Practices: 1. Keep all components in seperate js files, and club all files in a components folder
+2. Never keep Hardcoded data in your component code
+3. Keep all data and hardcoded data in seperate file.
+
+There are two types of exports, default export and named exports
+
+default export/import
+export default comp;
+import comp from "comp";
+
+named export/import
+export const comp = {} //some code
+import {comp} from "comp"
+
+# React Hooks
+    - Normal Javascript functions provided by React
+    - Two most used hooks are useState() and useEffect()
+    - We have to import these hooks as named import from React
+    - Syntax to declare a state variable =>  const [variableName, setVariableName] = useState(default value);
+    - Whenever a state variable changes react will re render the component
+
+
+# Reconciliation algorithm (React Fiber) : React uses this algorithm
+-Actual DOM :- <div id="root">  </div> in our index.html file
+-Virtual DOM :- our react components which are nothing but normal JS object
+- Virtual DOM is an representation of Actual DOM
+
+# Diff Algorithm
+ - Diff Algorithmm compares the virtual DOM and updates the Actual DOM
+
+                                        class 6 : Exploring the world
+
+# Monolith Architecture:- One single project for all services
+# MicroService Architecture:- Different projects for different services
+# Seperation of concerns and single responsibility principle (MicroService)
+# useEffect() gets called once the component is rendered 
+# Syntax of useEffect => useEffect(()=> {
+}, []);
+# Shimmer UI: showing the fake UI until the real data is fetche and rendered
