@@ -124,3 +124,5 @@ import {comp} from "comp"
 # Syntax of useEffect => useEffect(()=> {
 }, []);
 # Shimmer UI: showing the fake UI until the real data is fetche and rendered
+# Whenever a state variable is updated, react rerenders the component (Reconciliation cycle is triggered)
+# Virtual DOM is object representation of the JSX code we write
