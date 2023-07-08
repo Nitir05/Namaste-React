@@ -126,3 +126,17 @@ import {comp} from "comp"
 # Shimmer UI: showing the fake UI until the real data is fetche and rendered
 # Whenever a state variable is updated, react rerenders the component (Reconciliation cycle is triggered)
 # Virtual DOM is object representation of the JSX code we write
+
+                                    Class 7 : Finding the paths
+
+# If we have ony callBack function as argument in useEffect hook then it will be called everytime after component rerenders
+# If we have an empty dependency array in useEffect hook then it will be called only once after component renders
+#If we have something in depenedency array of useEffect, then it will be called everytime after that something is updated.
+# Always declare useState inside the body of component, never declare useState outside
+# Never declare useState inside condition or for loops or functions (e.g if-else).
+#To route to a different path or component we use react-router-dom library
+# we use CreateBrowserRouter to create router configuration and RouterProvider to provide these configurations to our App.
+# We have Outlet component from react-router-dom which replaces the children component based on the path
+#Never use anchor tag if we want to navigate to different component as it reloads th package
+# instead use Link tag from react-router -dom to route to other component without reloading the page
+# Types of routing in web app Client side routing and server side routing
