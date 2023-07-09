@@ -18,11 +18,11 @@ const RestaurentCard = (props) => {
         alt="restaurent image"
       />
       <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
+      <p>{cuisines.join(", ")}</p>
       <div className="res-estimates">
-        <h4>{avgRating}</h4>
-        <h4>{slaString}</h4>
-        <h4>₹{costForTwo / 100} FOR TWO</h4>
+        <span>{avgRating}</span>
+        <span>{slaString}</span>
+        <span>₹{costForTwo / 100} FOR TWO</span>
       </div>
     </div>
   );
