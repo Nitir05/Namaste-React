@@ -10,6 +10,7 @@ const RestaurantInfo = () => {
     fetchMenu();
   }, []);
 
+  console.log(resId);
   const fetchMenu = async () => {
     const data = await fetch(MENU_URL + resId);
     const json = await data.json();
@@ -30,6 +31,7 @@ const RestaurantInfo = () => {
     sla,
     costForTwoMessage,
   } = resInfo?.cards[0]?.card?.card?.info;
+
   return (
     <div className="restaurant-container">
       <div className="restaurantInfo">
