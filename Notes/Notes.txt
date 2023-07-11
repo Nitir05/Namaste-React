@@ -140,3 +140,16 @@ import {comp} from "comp"
 #Never use anchor tag if we want to navigate to different component as it reloads th package
 # instead use Link tag from react-router -dom to route to other component without reloading the page
 # Types of routing in web app Client side routing and server side routing
+
+
+                                    Class 8 : Lets get classy
+
+# Class based components are old way of creating components
+# Class Component includes a render() method which return a piec of JSX code.
+# To pass props in class based component we have to first declare a constructor in Our,
+   class based component, and then pass those propers to the class using super() keyword
+# In order to use passed props in render method we have to use this keyword
+# In order to declare state variable in Class components we have to use this.state property,
+    and then pass our state variables inside an object to this property.
+# In order to change value of state variable we have to use this.setState property and pass object of state variables
+# React lifecycle https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/

@@ -258,6 +258,11 @@ p {
 }
 
 .menu-image > img {
+  width: 180px;
+  height: 90px;
+}
+
+.menu-image > img {
   height: 150px;
 }
 
@@ -282,4 +287,11 @@ p {
   padding: 0;
   margin-top: 0;
   color: #3e4152;
+}
+
+.user-container {
+  text-align: center;
+}
+.avatar-img {
+  height: 100px;
 }

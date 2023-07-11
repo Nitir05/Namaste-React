@@ -55,7 +55,6 @@ const RestaurantInfo = () => {
           </div>
           <button className="res-ratings-container">
             <span className="res-ratings-container-starIcon">
-              <span>star</span>
               <span>4.0</span>
             </span>
             <span>500+ ratings</span>
