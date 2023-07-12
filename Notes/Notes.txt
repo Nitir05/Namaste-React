@@ -153,3 +153,10 @@ import {comp} from "comp"
     and then pass our state variables inside an object to this property.
 # In order to change value of state variable we have to use this.setState property and pass object of state variables
 # React lifecycle https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+                                 Class 9 : Optimizing our app
+
+# We should follow single responsibility principle while writing code.
+# We can use custom hook to seperate the functionalities in our code.
+# Custom hooks are normal javascript functions which return some piece of code.
+# custom hooks helps us in making code clean and lightweight.

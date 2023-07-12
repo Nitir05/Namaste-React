@@ -14,20 +14,19 @@ export default class UserClass extends React.Component {
   }
 
   async componentDidMount() {
-    const timer = setInterval(() => {
-      console.log("component mount");
-    }, 100);
     const data = await fetch("https://api.github.com/users/Nitir05");
     const json = await data.json();
+    this.timer = setInterval(() => {
+      console.log("Namaste React OP");
+    }, 1000);
 
     this.setState({
       userInfo: json,
     });
   }
-
   componentWillUnmount() {
-    console.log("component umounted");
     clearInterval(this.timer);
+    console.log("component unmounted");
   }
   render() {
     const { name, location, avatar_url } = this.state.userInfo;
