@@ -31,57 +31,54 @@ const Body = () => {
   return restroList.length === 0 ? (
     <Shimmer />
   ) : (
-    <>
-      <div className="body">
-        <div className="filter">
-          <div className="search">
-            <input
-              type="text"
-              className="search-box"
-              value={searchText}
-              onChange={(e) => {
-                setSearchText(e.target.value);
-              }}
-            />
-            <button
-              onClick={() => {
-                const filteredList = restroList.filter((res) => {
-                  return res.data.name.toLowerCase().includes(searchText);
-                });
-                setFilteredRestro(filteredList);
-              }}
-            >
-              Search
-            </button>
-            <button
-              onClick={() => {
-                setFilteredRestro(restroList);
-              }}
-            >
-              Clear Filters
-            </button>
-          </div>
-          <button
-            className="filter-btn"
-            onClick={() => {
-              const filteredList1 = restroList.filter(
-                (res) => res.data.avgRating > 4
-              );
-              setFilteredRestro(filteredList1);
-            }}
-          >
-            Top Rated Restaurents
-          </button>
-        </div>
-        <div className="res-container">
-          {filteredRestro.map((res) => (
-            <Link key={res.data.id} to={"/restaurants/" + res.data.id}>
-              <RestaurentCard resData={res} />
-            </Link>
-          ))}
-        </div>
+    <div>
+      <div className="flex justify-center items-center border-black">
+        <input
+          type="text"
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
+        <button
+          className="px-3 py-1 bg-green-100 m-4 rounded-md"
+          onClick={() => {
+            const filteredList = restroList.filter((res) => {
+              return res.data.name.toLowerCase().includes(searchText);
+            });
+            setFilteredRestro(filteredList);
+          }}
+        >
+          Search
+        </button>
+        <button
+          className="px-3 py-1 bg-green-100 m-4 rounded-md"
+          onClick={() => {
+            setFilteredRestro(restroList);
+          }}
+        >
+          Clear Filters
+        </button>
+        <button
+          className="px-3 py-1 bg-green-100 m-4 rounded-md border-black"
+          onClick={() => {
+            const filteredList1 = restroList.filter(
+              (res) => res.data.avgRating > 4
+            );
+            setFilteredRestro(filteredList1);
+          }}
+        >
+          Top Rated Restaurents
+        </button>
       </div>
-    </>
+      <div className="flex flex-wrap ml-6">
+        {filteredRestro.map((res) => (
+          <Link key={res.data.id} to={"/restaurants/" + res.data.id}>
+            <RestaurentCard resData={res} />
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 };
 

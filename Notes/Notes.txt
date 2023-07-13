@@ -160,3 +160,7 @@ import {comp} from "comp"
 # We can use custom hook to seperate the functionalities in our code.
 # Custom hooks are normal javascript functions which return some piece of code.
 # custom hooks helps us in making code clean and lightweight.
+
+                                Class 10: Jo dikhta hai wo bikta hai
+
+#
