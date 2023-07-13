@@ -11,7 +11,7 @@ const RestaurentCard = (props) => {
     costForTwo,
   } = resData?.data;
   return (
-    <div className="m-3 p-2 w-[250px] h-[280px] rounded-lg hover:border 1px divide-solid black shadow-md">
+    <div className="m-3 p-2 w-[250px] h-[290px] rounded-lg hover:border 1px divide-solid black shadow-md">
       <img
         className="rounded-sm"
         src={CDN_URL + cloudinaryImageId}

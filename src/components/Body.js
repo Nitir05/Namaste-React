@@ -71,7 +71,7 @@ const Body = () => {
           Top Rated Restaurents
         </button>
       </div>
-      <div className="flex flex-wrap ml-6">
+      <div className="flex flex-wrap ml-6 justify-center">
         {filteredRestro.map((res) => (
           <Link key={res.data.id} to={"/restaurants/" + res.data.id}>
             <RestaurentCard resData={res} />

@@ -18,13 +18,19 @@ const Header = () => {
         <ul className="flex items-center mr-4">
           <li className="p-2">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
           <li className="p-2">
-            <Link to="/about">About</Link>
+            <Link className="hover:text-orange-400" to="/about">
+              About
+            </Link>
           </li>
           <li className="p-2">
-            <Link to="/contact">Contact</Link>
+            <Link className="hover:text-orange-400" to="/contact">
+              Contact
+            </Link>
           </li>
           <li className="p-2">
-            <Link to="/grocery">Grocery</Link>
+            <Link className="hover:text-orange-400" to="/grocery">
+              Grocery
+            </Link>
           </li>
           <button
             className="p-2"
