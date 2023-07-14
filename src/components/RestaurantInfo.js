@@ -29,14 +29,14 @@ const RestaurantInfo = () => {
 
   return (
     <div>
-      <div className="">
-        <div className="res-header-container">
+      <div className="min-h-[800px] max-w-[800px] my-20 mx-auto mt-0">
+        <div className="res-header-container mx-0 pt-4 mb-[18px]">
           <div className="res-name-address inline-block mr-4 w-[calc(100%-120px)]">
             <div>
               <p className="text-2xl font-bold text-[#282c3f]  mb-2 capitalize">
                 {name}
               </p>
-              <p className="text-[0.93rem] text-[#7e808c] h-[calc(0.93rem+2px)] overflow-hidden text-ellipsis mb-1 whitespace-nowrap">
+              <p className="text-[0.93rem] text-[#7e808c] h-[calc(0.93rem+2px)]  text-ellipsis mb-1 pb-1">
                 {cuisines.join(", ")}
               </p>
             </div>
@@ -46,21 +46,44 @@ const RestaurantInfo = () => {
             </div>
           </div>
           <button className="border border-gray-300 shadow-sm rounded-md text-center p-2 max-w-[100px] float-right">
-            <span className="res-ratings-container-starIcon">
-              <span>4.0</span>
+            <span className="res-ratings-container-starIcon flex">
+              <span className="text-[#3d9b6d] pb-[10px] pr-2 border-b border-[#e9e9eb] font-bold mb-2 block">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span className="text-[#3d9b6d] pb-[10px] border-b border-[#e9e9eb] font-bold mb-2 block">
+                4.0
+              </span>
             </span>
-            <span>500+ ratings</span>
+            <span className="text-[11px] text-[#8b8d97] font-[ProximaNovaCondensedRegular,arial,Helvetica Neue,sans-serif]">
+              500+ ratings
+            </span>
           </button>
-          <hr className="res-header-seperator" />
-          <span className="estimated-time">{sla.slaString}</span>
-          <span className="cost">{costForTwoMessage}</span>
-          <hr className="res-header-seperator-solid" />
+          <ul></ul>
+          <hr className="border border-b-[#d3d3d3] border-dashed mt-4 mb-[18px]" />
+          <div className="mb-[18px]">
+            <ul className="text-[#3e4152] text-[15px] font-bold">
+              <li className="mr-6 inline-block">{sla.slaString}</li>
+              <li className="inline-block">{costForTwoMessage}</li>
+            </ul>
+          </div>
+          <hr className="border-[0.5px] border-b-[#d3d3d3]" />
         </div>
-        {/* <div className="menu-items">
+        <div>
           {itemCards.map((item) => (
             <Menu key={item.card.info.id} itemData={item} />
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   );
