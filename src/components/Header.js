@@ -11,7 +11,11 @@ const Header = () => {
     <div className="flex justify-between shadow-lg">
       <div>
         <Link to="/">
-          <img className="w-32" src={LOGO_URL} alt="Food Logo" />
+          <img
+            className="w-32 hover:shadow-md"
+            src={LOGO_URL}
+            alt="Food Logo"
+          />
         </Link>
       </div>
       <div className="flex items-center">

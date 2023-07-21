@@ -13,15 +13,15 @@ const RestaurentCard = (props) => {
   return (
     <div className="m-3 p-2 w-[250px] h-[290px] rounded-lg hover:border 1px divide-solid black shadow-md">
       <img
-        className="rounded-sm"
+        className="rounded-md w-full"
         src={CDN_URL + cloudinaryImageId}
         alt="restaurent image"
       />
-      <h3 className="font-bold py-2">{name}</h3>
-      <p>{cuisines.join(", ")}</p>
-      <div className="res-estimates">
-        <span>{avgRating}</span>
-        <span>{slaString}</span>
+      <h3 className="font-medium pt-2">{name}</h3>
+      <p className="text-[13px] text-[#686b78]">{cuisines.join(", ")}</p>
+      <div className="rflex justify-between">
+        <span className="pr-1">{avgRating}</span>
+        <span className="pr-1">{slaString}</span>
         <span>₹{costForTwo / 100} FOR TWO</span>
       </div>
     </div>

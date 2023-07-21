@@ -1,6 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import Offers from "./Offers";
 import { Link } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -8,7 +9,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [restroList, setRestroList] = useState([]);
   const [filteredRestro, setFilteredRestro] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [courouselList, setCourouselList] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -19,6 +20,7 @@ const Body = () => {
     const json = await data.json();
     setRestroList(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestro(json?.data?.cards[2]?.data?.data?.cards);
+    setCourouselList(json?.data?.cards[0]?.data.data?.cards);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -32,44 +34,12 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div>
-      <div className="flex justify-center items-center border-black">
-        <input
-          type="text"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-        <button
-          className="px-3 py-1 bg-green-100 m-4 rounded-md"
-          onClick={() => {
-            const filteredList = restroList.filter((res) => {
-              return res.data.name.toLowerCase().includes(searchText);
-            });
-            setFilteredRestro(filteredList);
-          }}
-        >
-          Search
-        </button>
-        <button
-          className="px-3 py-1 bg-green-100 m-4 rounded-md"
-          onClick={() => {
-            setFilteredRestro(restroList);
-          }}
-        >
-          Clear Filters
-        </button>
-        <button
-          className="px-3 py-1 bg-green-100 m-4 rounded-md border-black"
-          onClick={() => {
-            const filteredList1 = restroList.filter(
-              (res) => res.data.avgRating > 4
-            );
-            setFilteredRestro(filteredList1);
-          }}
-        >
-          Top Rated Restaurents
-        </button>
+      <div className="py-5 bg-[#171a29] contain mx-auto">
+        <div className="ml-[10px] flex">
+          {courouselList.map((item) => (
+            <Offers key={item.data.bannerId} offerData={item} />
+          ))}
+        </div>
       </div>
       <div className="flex flex-wrap ml-6 justify-center">
         {filteredRestro.map((res) => (

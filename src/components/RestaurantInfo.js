@@ -62,11 +62,11 @@ const RestaurantInfo = () => {
                 </svg>
               </span>
               <span className="text-[#3d9b6d] pb-[10px] border-b border-[#e9e9eb] font-bold mb-2 block">
-                4.0
+                {avgRating}
               </span>
             </span>
             <span className="text-[11px] text-[#8b8d97] font-[ProximaNovaCondensedRegular,arial,Helvetica Neue,sans-serif]">
-              500+ ratings
+              {totalRatingsString}
             </span>
           </button>
           <ul></ul>
