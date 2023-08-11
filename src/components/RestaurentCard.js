@@ -1,7 +1,9 @@
 import { CDN_URL } from "../utils/constants";
 
 const RestaurentCard = (props) => {
+  console.log("Props" + props);
   const { resData } = props;
+  console.log(resData);
   const {
     cloudinaryImageId,
     name,
@@ -9,7 +11,7 @@ const RestaurentCard = (props) => {
     avgRating,
     slaString,
     costForTwo,
-  } = resData?.data;
+  } = resData;
   return (
     <div className="m-3 p-2 w-[250px] h-[290px] rounded-lg hover:border 1px divide-solid black shadow-md">
       <img
@@ -26,6 +28,19 @@ const RestaurentCard = (props) => {
       </div>
     </div>
   );
+};
+
+//higher order component : component that takes another component as input and return a component
+
+const WithPromotedLabel = (RestaurentCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label>Promoted</label>
+        <RestaurentCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurentCard;
