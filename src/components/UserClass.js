@@ -31,8 +31,8 @@ export default class UserClass extends React.Component {
   render() {
     const { name, location, avatar_url } = this.state.userInfo;
     return (
-      <div className="user-container">
-        <img className="avatar-img" src={avatar_url} alt="avatar photo" />
+      <div className="text-center">
+        <img className="self-center" src={avatar_url} alt="avatar photo" />
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
       </div>

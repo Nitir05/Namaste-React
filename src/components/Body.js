@@ -2,28 +2,11 @@ import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { API_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import useBackendData from "../utils/useBackendData";
 
 const Body = () => {
-  const [restroList, setRestroList] = useState([]);
-  const [filteredRestro, setFilteredRestro] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(API_URL);
-    const json = await data.json();
-    setRestroList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestro(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
-
+  const [restroList, filteredRestro] = useBackendData();
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
     return (

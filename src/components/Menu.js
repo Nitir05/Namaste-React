@@ -15,7 +15,7 @@ const Menu = (props) => {
             </div>
             <div className="mt-1 ">
               <span className="text-base mr-2 font-normal text-[#3e4152]">
-                <span>₹{price / 100}</span>
+                <span>₹ {price / 100}</span>
               </span>
             </div>
             <div className="w-full mt-[14px] text-[rgba(40,44,63,.45)] text-[1] tracking-[-0.3px] ">
@@ -23,6 +23,11 @@ const Menu = (props) => {
             </div>
           </div>
           <div className="relative ml-4 min-w-[118px] h-[120px] text-[0]">
+            <div className="absolute w-full">
+              <button className="p-2 bg-white absolute shadow-lg ml-8 mt-16 rounded-md text-sm text-green-400 ">
+                ADD +
+              </button>
+            </div>
             <img
               className="w-[118px] h-24 rounded-md object-cover"
               src={ITEM_URL + imageId}
