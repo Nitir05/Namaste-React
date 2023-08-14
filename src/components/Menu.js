@@ -8,9 +8,9 @@ const Menu = (props) => {
 
   const dispatch = useDispatch();
 
-  const handleAddItem = (item) => {
+  const handleAddItem = (itemData) => {
     //dispatch an action
-    dispatch(addItem(item));
+    dispatch(addItem(itemData));
   };
 
   return (
@@ -35,8 +35,8 @@ const Menu = (props) => {
           <div className="relative ml-4 min-w-[118px] h-[120px] text-[0]">
             <div className="absolute w-full">
               <button
-                className="p-2 bg-white absolute shadow-lg ml-8 mt-16 rounded-md text-sm text-green-400 "
-                onClick={(item) => handleAddItem(item)}
+                className="p-2 bg-white absolute shadow-lg ml-8 mt-16 rounded-md text-sm text-green-400 w-6/12 "
+                onClick={() => handleAddItem(itemData)}
               >
                 ADD +
               </button>

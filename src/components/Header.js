@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnLabel, setBtnLabel] = useState("Login");
+  const [showUserName, setShowUserName] = useState(false);
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
 
@@ -53,11 +54,12 @@ const Header = () => {
               btnLabel === "Login"
                 ? setBtnLabel("Logout")
                 : setBtnLabel("Login");
+              setShowUserName(!showUserName);
             }}
           >
             {btnLabel}
           </button>
-          <li className="p-2 font-bold">{loggedInUser}</li>
+          {showUserName && <li className="p-2 font-bold">{loggedInUser}</li>}
         </ul>
       </div>
     </div>

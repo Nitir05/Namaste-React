@@ -1,9 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 
 const RestaurentCard = (props) => {
-  console.log("Props" + props);
   const { resData } = props;
-  console.log(resData);
   const {
     cloudinaryImageId,
     name,
@@ -13,7 +11,7 @@ const RestaurentCard = (props) => {
     costForTwo,
   } = resData;
   return (
-    <div className="m-3 p-2 w-[250px] h-[290px] rounded-lg hover:border 1px divide-solid black shadow-md">
+    <div className="m-3 p-2 w-[250px] h-auto rounded-lg hover:border 1px divide-solid black shadow-md">
       <img
         className="rounded-md w-full"
         src={CDN_URL + cloudinaryImageId}
@@ -24,7 +22,7 @@ const RestaurentCard = (props) => {
       <div className="rflex justify-between">
         <span className="pr-1">{avgRating}</span>
         <span className="pr-1">{slaString}</span>
-        <span>₹{costForTwo / 100} FOR TWO</span>
+        <span>{costForTwo}</span>
       </div>
     </div>
   );

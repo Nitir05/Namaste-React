@@ -11,6 +11,7 @@ import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/AppStore";
+import Cart from "./components/Cart";
 
 //lazy loading or code splitting or chunking or dynamic import
 
@@ -66,6 +67,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurants/:resId", //resId here is a dynamic Id of restaurant
         element: <RestaurantInfo />,
       },
+      {
+        path: "/cart",
+        element : <Cart />
+      }
     ],
   },
 ]);
