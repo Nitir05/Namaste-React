@@ -9,6 +9,8 @@ import RestaurantInfo from "./components/RestaurantInfo";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/AppStore";
 
 //lazy loading or code splitting or chunking or dynamic import
 
@@ -25,12 +27,12 @@ const AppLayout = () => {
     setUserName(data.Name);
   }, []);
   return (
-    <>
+    <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName }}>
         <Header />
         <Outlet />
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 

@@ -163,4 +163,11 @@ import {comp} from "comp"
 
                                 Class 10: Jo dikhta hai wo bikta hai
 
-#
+
+# Redux Toolkit
+    - install @reduxjs/toolkit and react-Redux
+    - Build our store
+    - connect our store to our app
+    - Slice (cart slice)
+    - Dispatch (action)
+    - Selector

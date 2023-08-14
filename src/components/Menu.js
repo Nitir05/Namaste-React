@@ -1,8 +1,18 @@
+import { useDispatch } from "react-redux";
 import { ITEM_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
 const Menu = (props) => {
   const { itemData } = props;
   const { name, price, description, imageId } = itemData?.card?.info;
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    //dispatch an action
+    dispatch(addItem(item));
+  };
+
   return (
     <div>
       <div className="pb-[14px]">
@@ -24,7 +34,10 @@ const Menu = (props) => {
           </div>
           <div className="relative ml-4 min-w-[118px] h-[120px] text-[0]">
             <div className="absolute w-full">
-              <button className="p-2 bg-white absolute shadow-lg ml-8 mt-16 rounded-md text-sm text-green-400 ">
+              <button
+                className="p-2 bg-white absolute shadow-lg ml-8 mt-16 rounded-md text-sm text-green-400 "
+                onClick={(item) => handleAddItem(item)}
+              >
                 ADD +
               </button>
             </div>
