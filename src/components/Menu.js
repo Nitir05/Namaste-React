@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { ITEM_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Menu = (props) => {
   const { itemData } = props;
@@ -11,10 +13,33 @@ const Menu = (props) => {
   const handleAddItem = (itemData) => {
     //dispatch an action
     dispatch(addItem(itemData));
+    //send an toast notification
+    toast.success('Item added to cart', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   };
 
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="pb-[14px]">
         <div className="flex justify-between items-start">
           <div className="max-w-[calc(100%-144px)]">

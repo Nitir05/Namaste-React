@@ -16,7 +16,7 @@ const useBackendData = () => {
       (c) => c.card?.card?.id === "restaurant_grid_listing"
     );
     setRestroList(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
