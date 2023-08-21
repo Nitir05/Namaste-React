@@ -189,3 +189,7 @@ import {comp} from "comp"
     - install @babel/preset-react- to make jsx work in test cases
     - include @babel/preset-react inside my babel config
     - install @testing-library/jest-dom
+
+# Testing 
+    - describe is used to group testc cases together
+    - it and test are exactly same
