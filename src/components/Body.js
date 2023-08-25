@@ -1,12 +1,11 @@
 import RestaurentCard from "./RestaurentCard";
-import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useBackendData from "../utils/useBackendData";
 
 const Body = () => {
-  const [restroList, filteredRestro] = useBackendData();
+  let [restroList, filteredRestro] = useBackendData();
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
     return (

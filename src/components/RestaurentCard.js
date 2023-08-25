@@ -18,7 +18,7 @@ const RestaurentCard = (props) => {
         alt="restaurent image"
       />
       <h3 className="font-medium pt-2">{name}</h3>
-      <p className="text-[13px] text-[#686b78]">{cuisines.join(", ")}</p>
+      <p className="text-[13px] text-[#686b78] whitespace-nowrap overflow-hidden overflow-ellipsis pt-1 pb-1">{cuisines.join(", ")}</p>
       <div className="rflex justify-between">
         <span className="pr-1">{avgRating}</span>
         <span className="pr-1">{slaString}</span>

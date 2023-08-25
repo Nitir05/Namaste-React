@@ -1,0 +1,84 @@
+{
+    "id": "59684",
+    "name": "Krishnum Restaurant",
+    "cloudinaryImageId": "dtgxuj3xyanfgczcm9id",
+    "locality": "CA road",
+    "areaName": "Mominpura",
+    "costForTwo": "₹200 for two",
+    "cuisines": [
+        "South Indian",
+        "Indian",
+        "Chinese",
+        "Beverages"
+    ],
+    "avgRating": 3.9,
+    "feeDetails": {
+        "restaurantId": "59684",
+        "fees": [
+            {
+                "name": "BASE_DISTANCE",
+                "fee": 2400
+            },
+            {
+                "name": "BASE_TIME"
+            },
+            {
+                "name": "ANCILLARY_SURGE_FEE"
+            }
+        ],
+        "totalFee": 2400
+    },
+    "parentId": "4834",
+    "avgRatingString": "3.9",
+    "totalRatingsString": "5K+",
+    "sla": {
+        "deliveryTime": 24,
+        "lastMileTravel": 1.7,
+        "serviceability": "SERVICEABLE",
+        "slaString": "24 mins",
+        "lastMileTravelString": "1.7 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2023-08-22 22:30:00",
+        "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {},
+            "textBased": {},
+            "textExtendedBadges": {}
+        }
+    },
+    "aggregatedDiscountInfoV3": {
+        "header": "₹125 OFF",
+        "subHeader": "ABOVE ₹199",
+        "discountTag": "FLAT DEAL",
+        "discountCalloutInfo": {
+            "message": "Free Delivery",
+            "logoCtx": {
+                "logo": "v1655895371/free_delivery_logo_hqipbo.png"
+            }
+        }
+    },
+    "orderabilityCommunication": {
+        "title": {},
+        "subTitle": {},
+        "message": {},
+        "customIcon": {}
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+}

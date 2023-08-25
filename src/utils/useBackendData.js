@@ -15,9 +15,8 @@ const useBackendData = () => {
     const listOfRestros = json?.data?.cards.filter(
       (c) => c.card?.card?.id === "restaurant_grid_listing"
     );
-    setRestroList(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    console.log(listOfRestros);
+    setRestroList(listOfRestros[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   useEffect(() => {

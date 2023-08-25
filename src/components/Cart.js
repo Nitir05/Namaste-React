@@ -10,6 +10,7 @@ const Cart = () => {
     //subscribing to the store using Selector
     //make sure to subscribe to th correct store else it will be huge perfomance loss
     const cartItems = useSelector((store) => store.cart.items);
+    const totalBill = cartItems.reduce((sum, item)=> sum + (item?.card?.info?.price/100), 0);
 
     const handleClearCart = () => {
         dispatch(clearCart());
@@ -28,7 +29,7 @@ const Cart = () => {
         </div>
     ) : (
         <div className="flex justify-center">
-            <div className="shadow-lg p-4 m-4 w-full">
+            <div className="shadow-lg p-4 m-4 w-auto grid place-items-center">
                 <button className="bg-black text-white font-bold rounded-md p-2 text-center" onClick={handleClearCart}>Clear Cart</button>
                 {cartItems.map((item)=><Menu key={item.card.info.id} itemData={item}/>)}
             </div>
@@ -41,10 +42,10 @@ const Cart = () => {
                         Restaurant Name
                     </span>
                 </div>
-                <div className="shadow-lg w-full h-full">
+                <div className="shadow-lg w-full h-auto">
                     {cartItems.map((item) => (
                         <div className="flex grow justify-between p-2 m-2" key={item?.card?.info?.id}>
-                            <div className="pt-2 text-sm font-normal text-[#282c3f] cursor-pointer">
+                            <div className="pt-2 text-sm font-normal text-[#282c3f]">
                                 {item?.card?.info?.name}
                             </div>
                             <div className=" border divide-solid border-[#d4d5d9] flex mt-2 cursor-pointer">
@@ -53,9 +54,16 @@ const Cart = () => {
                             </div>
                             <div className="pt-2 text-[#535665] text-[13px] font-light text-right">
                                 ₹ {item?.card?.info?.price/100}
+                                <span className="pl-1"></span>
+                                
                             </div>
                         </div>
                     ))}
+                    <hr className="pb-1"></hr>
+                    <div className="flex grow justify-between p-2 m-2">
+                        <div className="pt-2 text-sm font-normal text-[#282c3f]">Total Bill</div>
+                        <div className="pt-2 text-[#535665] text-[13px] font-light text-right">₹ {totalBill}</div>
+                    </div>
                 </div>
             </div>
         </div>
