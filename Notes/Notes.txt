@@ -193,3 +193,5 @@ import {comp} from "comp"
 # Testing 
     - describe is used to group testc cases together
     - it and test are exactly same
+    - add jest --watch in package.json file to automatically re run test cases 
+    - Whenever we are updating state in Component, we have use act in the test code
