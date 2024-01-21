@@ -73,3 +73,17 @@ A: The Difference is stated below:
     <ThirdChildComponent />
 </TitleComponent>
 ```
+
+## Q. What is `Component Composition` ?
+
+A: React Component inside an Component is known as Component composition.
+
+```js
+const Heading = () => <h1 className="heading"> Namaster React using JSX 🚀</h1>;
+const Title = () => (
+  <div id="container">
+    <Heading />
+    <h2 style={{ textAlign: "center" }}>This is Title</h2>
+  </div>
+);
+```
