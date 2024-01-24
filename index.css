@@ -24,10 +24,14 @@
   list-style: none;
 }
 
+.body {
+  margin: 0 5%;
+}
+
 .res-card {
   padding: 5px;
-  width: 220px;
-  height: 350px;
+  width: 250px;
+  height: 400;
   border-radius: 10px;
   overflow: hidden;
 }
