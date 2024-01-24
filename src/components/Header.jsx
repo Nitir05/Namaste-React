@@ -1,12 +1,10 @@
+import { BRAND_LOGO_URL } from "../utils/constants";
+
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img
-          className="logo"
-          src="https://marketplace.canva.com/EAFaFUz4aKo/2/0/1600w/canva-yellow-abstract-cooking-fire-free-logo-JmYWTjUsE-Q.jpg"
-          alt="Brand Logo"
-        />
+        <img className="logo" src={BRAND_LOGO_URL} alt="Brand Logo" />
       </div>
       <div className="nav-items">
         <ul>

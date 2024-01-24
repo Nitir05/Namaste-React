@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import { API_URL } from "../utils/constants";
 
 const Body = () => {
+  const [filteredResList, setFilteredResList] = useState([]);
   const [resList, setResList] = useState([]);
 
   useEffect(() => {
     const getRestaurantData = async () => {
       try {
-        const data = await fetch(
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        );
+        const data = await fetch(API_URL);
         const json = await data.json();
         const newResList =
           json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
         setResList(newResList);
+        setFilteredResList(newResList);
       } catch (error) {
         console.error("Error fetching restaurant data:", error);
       }
@@ -24,9 +25,26 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="search">Search</div>
+      <div className="search-and-filter">
+        <input type="search" name="search" id="search" />
+        <button
+          onClick={() => {
+            setFilteredResList(resList.filter((res) => res.info.avgRating > 4));
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+        <button
+          type="reset"
+          onClick={() => {
+            setFilteredResList(resList);
+          }}
+        >
+          Reset Filter
+        </button>
+      </div>
       <div className="res-container">
-        {resList.map((res) => (
+        {filteredResList.map((res) => (
           <RestaurantCard key={res.info.id} resData={res} />
         ))}
       </div>
