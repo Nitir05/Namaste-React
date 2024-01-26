@@ -14,7 +14,9 @@ const Body = () => {
         const data = await fetch(API_URL);
         const json = await data.json();
         const newResList =
-          json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+          json?.data?.cards.filter(
+            (item) => item?.card?.card?.id === "restaurant_grid_listing"
+          )?.[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
         setResList(newResList);
         setFilteredResList(newResList);
       } catch (error) {

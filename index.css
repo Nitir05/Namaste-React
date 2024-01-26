@@ -24,6 +24,15 @@
   list-style: none;
 }
 
+.nav-items > ul > li > a {
+  text-decoration: none;
+  color: orange;
+}
+
+.nav-items > ul > li > a:active {
+  color: darkorange;
+}
+
 .body {
   margin-left: calc(10% + 36px);
   margin-right: calc(10% + 36px);
@@ -60,6 +69,7 @@
 .res-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 h3 {
