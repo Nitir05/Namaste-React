@@ -350,3 +350,79 @@ button:active {
   content: "|";
   margin: 0 3px;
 }
+
+.veg-only-wrapper {
+  margin: 24px 16px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.veg-only {
+  display: flex;
+  align-items: center;
+  height: 14px;
+  backface-visibility: hidden;
+  -webkit-box-align: center;
+}
+
+.veg-only-label {
+  font-size: 1rem;
+  color: #3d4152;
+  font-weight: 600;
+}
+
+.toggle-switch {
+  background: #d4d5d9;
+  width: 36px;
+  height: 18px;
+  position: relative;
+  -webkit-transition: background-color 0.25s linear;
+  -o-transition: background-color 0.25s linear;
+  transition: background-color 0.25s linear;
+  will-change: background-color;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  contain: layout;
+  display: inline-block;
+  border-radius: 4px;
+  backface-visibility: hidden;
+}
+
+.toggle-thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 16px;
+  backface-visibility: hidden;
+  background: #fff;
+  border: 2px solid #d4d5d9;
+  -webkit-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  will-change: transform, border-color;
+  contain: strict;
+  border-radius: 4px;
+}
+
+.toggle-thumb-content {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s linear;
+  -o-transition: opacity 0.25s linear;
+  transition: opacity 0.25s linear;
+  will-change: opacity;
+}
+
+.veg-only-circle {
+  background: #0f8a65;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}

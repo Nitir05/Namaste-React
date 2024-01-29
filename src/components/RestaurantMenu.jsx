@@ -98,6 +98,28 @@ const RestaurantMenu = () => {
           </div>
         </div>
       </div>
+      <div>
+        <div className="veg-only-wrapper">
+          <div className="veg-only">
+            <div className="veg-only-label">Veg Only</div>
+            <button
+              className="veg-only-filter"
+              role="switch"
+              aria-label="Veg Only"
+              aria-checked="false"
+            >
+              <span className="toggle-switch">
+                <span className="toggle-thumb">
+                  <span className="toggle-thumb-content">
+                    <span className="veg-only-circle"></span>
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div></div>
+      </div>
     </div>
   );
 };
