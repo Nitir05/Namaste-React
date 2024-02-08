@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { RES_MENU_URL } from "../utils/constants";
 import { useParams } from "react-router-dom";
 import MenuOffer from "./MenuOffer";
+import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const [resData, setResData] = useState({});
+  const [resData, setResData] = useState(null);
   const [offerList, setOfferList] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
   const resId = useParams()?.resId;
@@ -20,6 +21,8 @@ const RestaurantMenu = () => {
     setOfferList(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.offers);
     setMenuItems(json?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   };
+
+  if (resData === null) return <Shimmer />;
   return (
     <div className="menu-container">
       <div className="res-header-wrapper">
@@ -118,7 +121,7 @@ const RestaurantMenu = () => {
             </button>
           </div>
         </div>
-        <div></div>
+        <div className="styles-divider"></div>
       </div>
     </div>
   );

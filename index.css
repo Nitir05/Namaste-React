@@ -239,6 +239,13 @@ button:active {
   border-bottom: 1px dashed #d3d3d3;
 }
 
+.styles-divider {
+  border-bottom: 0.5px solid #d3d3d3;
+  height: 0.5px;
+  margin: 24px auto 24px 0;
+  width: calc(100% - 32px);
+}
+
 .res-header-margin-bottom {
   margin-bottom: 18px;
 }
@@ -352,7 +359,7 @@ button:active {
 }
 
 .veg-only-wrapper {
-  margin: 24px 16px 0 16px;
+  margin: 24px 16px 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -425,4 +432,10 @@ button:active {
   top: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
+}
+
+.user-card {
+  min-height: 100px;
+  width: auto;
+  border: 1px solid #eeeeee;
 }
