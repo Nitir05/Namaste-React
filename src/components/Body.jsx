@@ -38,9 +38,16 @@ const Body = () => {
     return filteredResList.length === 0 ? (
         <Shimmer />
     ) : (
-        <div className="body">
-            <div className="search-and-filter">
+        <div
+            className="p-0 font-light text-[#282c3f]"
+            style={{
+                marginRight: "calc(10% + 36px)",
+                marginLeft: "calc(10% + 36px)",
+            }}
+        >
+            <div className="my-2 mx-0">
                 <input
+                    className="border border-solid border-gray-400 rounded-md mx-2 p-1"
                     type="search"
                     name="search"
                     id="search"
@@ -50,6 +57,7 @@ const Body = () => {
                     }}
                 />
                 <button
+                    className="rounded-md bg-orange-400 font-bold p-1 mx-2"
                     onClick={() => {
                         if (searchText) {
                             setFilteredResList(
@@ -65,6 +73,7 @@ const Body = () => {
                     Search
                 </button>
                 <button
+                    className="rounded-md bg-orange-400 font-bold p-1 mx-2"
                     onClick={() => {
                         setFilteredResList(
                             resList.filter((res) => res.info.avgRating > 4)
@@ -74,6 +83,7 @@ const Body = () => {
                     Top Rated Restaurants
                 </button>
                 <button
+                    className="rounded-md bg-orange-400 font-bold p-1 mx-2"
                     type="reset"
                     onClick={() => {
                         setFilteredResList(resList);
@@ -82,7 +92,7 @@ const Body = () => {
                     Reset Filter
                 </button>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap gap-4">
                 {filteredResList.map((res) => (
                     <Link key={res.info.id} to={`/restaurant/${res.info.id}`}>
                         <RestaurantCard resData={res} />

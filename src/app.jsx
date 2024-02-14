@@ -14,7 +14,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
     return (
-        <div className="app">
+        <div className="m-0 p-0">
             <Header />
             <Outlet />
             {/** The components will be replaced with the Component according to the Path */}
