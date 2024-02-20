@@ -11,19 +11,29 @@ const RestaurantMenu = () => {
     const [resData, offerList, menuItems] = useRestaurantMenu(resId);
     if (resData === null) return <Shimmer />;
     return (
-        <div className="menu-container">
-            <div className="res-header-wrapper">
-                <div className="res-header">
-                    <div className="res-name-address-wrapper">
+        <div className="max-w-[800px] min-h-[800px] m-5 mx-auto mt-0">
+            <div>
+                <div className="pt-4 mb-4">
+                    <div
+                        className="inline-block mr-4"
+                        style={{ width: "calc(100% - 120px)" }}
+                    >
                         <div>
-                            <p className="res-name">{resData?.name}</p>
-                            <p className="res-cuisines">
+                            <p className="text-2xl font-semibold text-[#282c3f] capitalize mb-2">
+                                {resData?.name}
+                            </p>
+                            <p
+                                className="text-sm text-[#7e808c] overflow-hidden text-ellipsis whitespace-nowrap mb-1"
+                                style={{ height: "calc(0.93rem + 2px)" }}
+                            >
                                 {resData?.cuisines?.join(", ")}
                             </p>
                         </div>
-                        <div className="res-area-wrapper">
-                            <p className="res-area-name">{resData?.areaName}</p>
-                            <p className="res-last-mile">
+                        <div className="flex items-center h-4">
+                            <p className="text-sm text-[#7e808c]">
+                                {resData?.areaName}
+                            </p>
+                            <p className="text-sm text-[#7e808c] mr-1">
                                 {resData?.sla?.lastMileTravelString}
                             </p>
                         </div>
